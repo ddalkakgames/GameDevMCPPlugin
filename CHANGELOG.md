@@ -2,7 +2,7 @@
 
 All notable changes for this repository will be documented in this file.
 
-## v0.2.0 - 2026-03-31
+## v0.8.0 - 2026-03-31
 
 First public release.
 
@@ -11,6 +11,7 @@ First public release.
 - Binary-only plugin package for `Unreal Engine 5.7`
 - Win64 plugin build
 - Embedded MCP server inside the plugin package
+- MCP launch scripts and server files included in the release package
 - Initial public distribution package for Unreal Editor workflow validation
 
 ### Coverage
