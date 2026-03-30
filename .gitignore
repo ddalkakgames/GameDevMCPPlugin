@@ -1,0 +1,13 @@
+# Local packaging artifacts
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local build/output folders
+dist/
+release-assets/
