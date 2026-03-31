@@ -55,31 +55,23 @@ This project is especially useful if you want to:
 5. Confirm the plugin is loaded and that this file exists:
    - `<YourProject>/Saved/UnrealMCP/connection.json`
 
-### 2. Register the MCP server in your AI client
+### 2. Register the bundled MCP server
 
 The plugin package includes the MCP server inside:
 
 - `<YourProject>/Plugins/GameDevMCPPlugin/mcp_server`
 
-Use the included launcher that matches your client environment.
+The easiest way to get started is to ask your AI client to register the bundled `mcp_server` from this plugin and connect it to your running Unreal Editor.
 
-**Codex on Windows**
+**Recommended prompt**
 
-```powershell
-codex mcp remove ue-mcp
-codex mcp add ue-mcp -- D:\path\to\YourProject\Plugins\GameDevMCPPlugin\mcp_server\scripts\run_mcp_server.cmd
-codex mcp get ue-mcp --json
+```text
+Register the bundled mcp_server from this plugin as an MCP server and connect it to my running Unreal Editor.
 ```
 
-**Codex on WSL / Linux**
+Most MCP-capable clients can use the bundled launcher as a standard stdio MCP server.
 
-```bash
-codex mcp remove ue-mcp
-codex mcp add ue-mcp -- /path/to/YourProject/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server.sh
-codex mcp get ue-mcp --json
-```
-
-Other MCP clients can use the same launcher as a standard stdio MCP server.
+If your client does not support MCP setup by prompt, see [CLIENT_SETUP.md](./CLIENT_SETUP.md) for manual setup examples.
 
 ### 3. Ask your AI agent to connect to Unreal
 
@@ -92,13 +84,6 @@ Connect to my current Unreal Editor through MCP.
 List the available tools from ue-mcp.
 ```
 
-If you prefer Korean prompts in Codex, this also works:
-
-```text
-현재 언리얼 에디터랑 MCP 연결해줘.
-ue-mcp에서 사용할 수 있는 툴 목록 보여줘.
-```
-
 After that, you can ask for higher-level tasks such as:
 
 ```text
@@ -107,14 +92,11 @@ Inspect this Animation Blueprint and summarize its state machine.
 Add trees and grass to the currently open level.
 ```
 
-### 4. Optional Codex timeout setting
+### 4. If setup by prompt does not work
 
-If Unreal startup or tool catalog sync is slow, add this to `~/.codex/config.toml`:
+Some clients require manual MCP configuration instead of natural-language setup.
 
-```toml
-[mcp_servers.ue-mcp]
-startup_timeout_sec = 60
-```
+See [CLIENT_SETUP.md](./CLIENT_SETUP.md) for client-specific examples and Codex tips.
 
 ## 🤖 Clients
 
@@ -123,6 +105,8 @@ startup_timeout_sec = 60
 - Cursor
 - VS Code MCP-compatible clients
 - other MCP-capable agent clients
+
+Client-specific setup examples live in [CLIENT_SETUP.md](./CLIENT_SETUP.md).
 
 ## 🧩 Use Cases
 
