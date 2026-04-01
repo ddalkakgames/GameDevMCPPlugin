@@ -43,6 +43,8 @@ This project is especially useful if you want to:
 - Landscape, foliage, and world authoring workflows
 - Embedded MCP server and Unreal Editor bridge tooling
 
+For a comprehensive domain-by-domain support summary, including Live Coding, animation, Control Rig, Sequencer, Data Tables, and world authoring, see [CAPABILITY_MATRIX.md](./CAPABILITY_MATRIX.md).
+
 ## 🚀 Quick Start
 
 ### 1. Install the plugin
