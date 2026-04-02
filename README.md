@@ -36,9 +36,9 @@ This project is especially useful if you want to:
 
 - Asset query and lifecycle workflows
 - UMG inspection and editing workflows
-- Blueprint authoring and graph workflows
+- Blueprint authoring and graph workflows, including comment box nodes
 - Animation Blueprint and animation workflows
-- Niagara and material workflows
+- Niagara and material workflows, including reroute and named reroute graph coverage
 - Settings and object inspection workflows
 - Landscape, foliage, and world authoring workflows
 - Embedded MCP server and Unreal Editor bridge tooling
@@ -72,6 +72,8 @@ Register the bundled mcp_server from this plugin as an MCP server and connect it
 ```
 
 Most MCP-capable clients can use the bundled launcher as a standard stdio MCP server.
+
+If you keep one global `ue-mcp` entry and switch between multiple Unreal projects, use the bundled workspace-aware launchers instead of hardcoding one project path. See [CLIENT_SETUP.md](./CLIENT_SETUP.md) for examples.
 
 If your client does not support MCP setup by prompt, see [CLIENT_SETUP.md](./CLIENT_SETUP.md) for manual setup examples.
 
@@ -134,6 +136,8 @@ This repository includes:
 - embedded MCP server files inside the plugin package
 - release notes
 - installation guidance
+- client setup examples
+- capability matrix
 - known issues
 
 The full Unreal plugin source repository is not included in this public repository.
@@ -144,10 +148,14 @@ The package includes the embedded MCP server inside the plugin folder.
 
 - Server root:
   - `<YourProject>/Plugins/GameDevMCPPlugin/mcp_server`
-- Launchers:
+- Fixed-project launchers:
   - `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server.cmd`
   - `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server.ps1`
   - `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server.sh`
+- Workspace-aware launchers:
+  - `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server_from_cwd.cmd`
+  - `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server_from_cwd.ps1`
+  - `<YourProject>/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server_from_cwd.sh`
 
 ## 🖥️ Supported Setup
 

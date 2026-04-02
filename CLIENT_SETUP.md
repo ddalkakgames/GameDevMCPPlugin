@@ -23,18 +23,45 @@ Bundled launchers:
 - `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server.cmd`
 - `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server.ps1`
 - `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server.sh`
+- `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server_from_cwd.cmd`
+- `<YourProject>/Plugins/GameDevMCPPlugin/run_mcp_server_from_cwd.ps1`
 
 You can also call the scripts directly from:
 
 - `<YourProject>/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server.cmd`
 - `<YourProject>/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server.ps1`
 - `<YourProject>/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server.sh`
+- `<YourProject>/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server_from_cwd.cmd`
+- `<YourProject>/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server_from_cwd.ps1`
+- `<YourProject>/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server_from_cwd.sh`
+
+## Launcher modes
+
+### Fixed-project launcher
+
+Use the standard `run_mcp_server.*` launchers when the client configuration is already project-local and should always point to one Unreal project.
+
+### Workspace-aware launcher
+
+Use `run_mcp_server_from_cwd.*` when you want one global `ue-mcp` entry to follow the current client workspace and resolve the matching Unreal project automatically.
+
+This is especially useful for:
+
+- Codex CLI global MCP config
+- Claude Code global MCP config
+- GitHub Copilot CLI user config
+- Gemini CLI user config
+
+Current limitation:
+
+- if multiple Unreal Editor instances of the same project are open at the same time, project-based routing can still be ambiguous
+- if your client already uses per-project config files such as `.cursor/mcp.json` or `.vscode/mcp.json`, the fixed-project launcher is usually sufficient
 
 ## Codex on Windows
 
 ```powershell
 codex mcp remove ue-mcp
-codex mcp add ue-mcp -- D:\path\to\YourProject\Plugins\GameDevMCPPlugin\mcp_server\scripts\run_mcp_server.cmd
+codex mcp add ue-mcp -- D:\path\to\YourProject\Plugins\GameDevMCPPlugin\run_mcp_server_from_cwd.cmd
 codex mcp get ue-mcp --json
 ```
 
@@ -42,7 +69,7 @@ codex mcp get ue-mcp --json
 
 ```bash
 codex mcp remove ue-mcp
-codex mcp add ue-mcp -- /path/to/YourProject/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server.sh
+codex mcp add ue-mcp -- /path/to/YourProject/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server_from_cwd.sh
 codex mcp get ue-mcp --json
 ```
 
@@ -59,7 +86,7 @@ startup_timeout_sec = 60
 
 ```powershell
 claude mcp remove ue-mcp
-claude mcp add --transport stdio ue-mcp -- cmd /c D:\path\to\YourProject\Plugins\GameDevMCPPlugin\run_mcp_server.cmd
+claude mcp add --transport stdio ue-mcp -- cmd /c D:\path\to\YourProject\Plugins\GameDevMCPPlugin\run_mcp_server_from_cwd.cmd
 claude mcp get ue-mcp
 ```
 
@@ -67,7 +94,7 @@ claude mcp get ue-mcp
 
 ```bash
 claude mcp remove ue-mcp
-claude mcp add --transport stdio ue-mcp -- bash /path/to/YourProject/Plugins/GameDevMCPPlugin/run_mcp_server.sh
+claude mcp add --transport stdio ue-mcp -- bash /path/to/YourProject/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server_from_cwd.sh
 claude mcp get ue-mcp
 ```
 
@@ -159,7 +186,7 @@ Example for Windows:
       "command": "cmd",
       "args": [
         "/c",
-        "D:\\path\\to\\YourProject\\Plugins\\GameDevMCPPlugin\\run_mcp_server.cmd"
+        "D:\\path\\to\\YourProject\\Plugins\\GameDevMCPPlugin\\run_mcp_server_from_cwd.cmd"
       ],
       "env": {},
       "tools": ["*"]
@@ -177,7 +204,7 @@ Example for WSL / Linux / macOS:
       "type": "local",
       "command": "bash",
       "args": [
-        "/path/to/YourProject/Plugins/GameDevMCPPlugin/run_mcp_server.sh"
+        "/path/to/YourProject/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server_from_cwd.sh"
       ],
       "env": {},
       "tools": ["*"]
@@ -199,7 +226,7 @@ Example for Windows:
       "command": "cmd",
       "args": [
         "/c",
-        "D:\\path\\to\\YourProject\\Plugins\\GameDevMCPPlugin\\run_mcp_server.cmd"
+        "D:\\path\\to\\YourProject\\Plugins\\GameDevMCPPlugin\\run_mcp_server_from_cwd.cmd"
       ],
       "trust": false
     }
@@ -215,7 +242,7 @@ Example for WSL / Linux / macOS:
     "ue-mcp": {
       "command": "bash",
       "args": [
-        "/path/to/YourProject/Plugins/GameDevMCPPlugin/run_mcp_server.sh"
+        "/path/to/YourProject/Plugins/GameDevMCPPlugin/mcp_server/scripts/run_mcp_server_from_cwd.sh"
       ],
       "trust": false
     }
@@ -243,5 +270,6 @@ Use the launcher that matches the client environment:
 - Windows client: `run_mcp_server.cmd`
 - PowerShell-based client: `run_mcp_server.ps1`
 - WSL / Linux / macOS client: `run_mcp_server.sh`
+- Global multi-project setup: `run_mcp_server_from_cwd.cmd` / `run_mcp_server_from_cwd.ps1` / `mcp_server/scripts/run_mcp_server_from_cwd.sh`
 
 In general, configure the client to launch the bundled script as a stdio MCP server, then ask the agent to connect to your running Unreal Editor.

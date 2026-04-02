@@ -2,6 +2,33 @@
 
 All notable changes for this repository will be documented in this file.
 
+## v0.8.2 - 2026-04-02
+
+Authoring and launcher update release.
+
+### Added
+
+- Workspace-aware MCP launchers for WSL, PowerShell, and CMD workflows
+- Codex registration helpers for switching one global `ue-mcp` entry across multiple Unreal projects
+- Public docs for Blueprint comment box authoring and Material reroute / named reroute coverage
+
+### Improved
+
+- Blueprint graph authoring now includes comment box creation, configuration, and round-trip inspection
+- Material graph authoring now includes reroute and named reroute declaration / usage flows
+- `material_workflow` smoke coverage now validates named reroute material and material-function paths
+
+### Fixed
+
+- Reduced wrong-project connection issues when one global `ue-mcp` entry is reused across multiple Unreal projects
+- Removed a named reroute Live Coding link-time failure caused by direct engine-method linkage
+
+### Compatibility
+
+- Unreal Engine: `5.7`
+- Platform: `Win64`
+- Distribution: `Binary-only`
+
 ## v0.8.1 - 2026-04-02
 
 Packaging fix release.

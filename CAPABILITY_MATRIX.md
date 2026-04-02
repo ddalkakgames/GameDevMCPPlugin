@@ -29,10 +29,10 @@ It is intentionally conservative.
 | Object Inspect / Patch | Advanced | Yes | No | Yes | N/A | `object.inspect`, `object.patch`, and `object.patch.v2` provide the shared property editing surface used by several authoring domains. |
 | Project / GameMode Settings | Advanced | Yes | N/A | Yes | Apply | Project settings patch/apply and GameMode get/default/map override/compose workflows are available. |
 | Editor / Live Coding | Partial | Yes | N/A | Compile trigger | Partial | `editor.livecoding.compile` exists with artifact capture and job requery, but self-patch safe mode is asynchronous and Windows/editor-session specific. |
-| Blueprint | Advanced | Yes | Yes | Yes | Yes | Blueprint class, variable, function, graph node/pin, compose, stabilize, validate, and compile flows are implemented. |
+| Blueprint | Advanced | Yes | Yes | Yes | Yes | Blueprint class, variable, function, graph node/pin, comment box, compose, stabilize, validate, and compile flows are implemented. |
 | UMG / Widget Blueprint | Advanced | Yes | Yes | Yes | Yes | Widget Blueprint creation, widget tree edits, slot patching, bindings, events, animations, and UMG workflow helpers are available. |
 | Runtime UI / Slate / Widget Reflector | Read-only | Yes | No | No | N/A | Live editor UI snapshots, hit tests, focus inspection, and snapshot diffing are supported for runtime introspection. |
-| Material | Advanced | Yes | Yes | Yes | Yes | Material graph expression add/connect/configure, property wiring, layout, and recompile flows are supported. |
+| Material | Advanced | Yes | Yes | Yes | Yes | Material graph expression add/connect/configure, reroute and named reroute flows, property wiring, layout, and recompile flows are supported. |
 | Niagara | Partial | Yes | Yes | Limited | Partial | System, emitter, module, renderer, param, template, preview, and validate flows exist, but public positioning should still stay conservative on full native parity. |
 | Animation Blueprint | Advanced | Yes | Yes | Yes | Yes | Anim Blueprint create, summary, graph/state-machine authoring, transition rule editing, anim graph node insertion, and validate/compile flows are present. |
 | Anim Montage | Advanced | Yes | Yes | Yes | Preview | Montage create, summary, section/slot/segment workflows, notify/branching point add, blend patch, and preview play are exposed. |
@@ -105,6 +105,7 @@ Current limitation:
 - Create Blueprint classes
 - Add variables and functions
 - Add, remove, move, configure, and reconstruct graph nodes
+- Create and configure Blueprint comment boxes
 - Connect pins, disconnect pins, autowire exec paths, and set pin defaults
 - Use compose/layout/stabilize/validate-and-compile workflows
 
@@ -134,6 +135,7 @@ Current limitation:
 
 - Create or prepare material assets through shared asset workflows
 - Add material expressions
+- Add reroute and named reroute declaration / usage expressions
 - Connect expression outputs and material properties
 - Configure expression properties
 - Layout the graph and recompile

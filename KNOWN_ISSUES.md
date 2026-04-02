@@ -50,6 +50,18 @@ This public preview repository distributes binary packages only.
 
 Source code is not included in this repository.
 
+### 7. Same-Project Multi-Editor Routing Can Be Ambiguous
+
+The release includes workspace-aware launchers that resolve the Unreal project from the current client workspace.
+
+This avoids many wrong-project connection cases when you switch between different Unreal projects, but if multiple Unreal Editor instances of the same project are open at the same time, automatic routing can still be ambiguous.
+
+### 8. Live Coding Completion Can Be Asynchronous
+
+Live Coding support exists, but completion timing can still depend on editor state and self-patch safety rules.
+
+Treat Live Coding as a practical workflow surface, not a guaranteed instant synchronous compile path.
+
 ## Reporting Issues
 
 When reporting issues, please include:
