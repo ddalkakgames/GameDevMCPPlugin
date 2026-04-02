@@ -108,6 +108,14 @@ Some clients require manual MCP configuration instead of natural-language setup.
 
 See [CLIENT_SETUP.md](./CLIENT_SETUP.md) for client-specific examples and Codex tips.
 
+## 🎬 Demo Videos
+
+### Blueprint authoring demo
+
+[![Watch the Blueprint authoring demo](https://img.youtube.com/vi/oD46CTOxgMU/hqdefault.jpg)](https://youtu.be/oD46CTOxgMU)
+
+See a Blueprint creation workflow in action with GameDev MCP Plugin and an AI agent.
+
 ## 🤖 Clients
 
 - Codex CLI
