@@ -36,7 +36,7 @@ This project is especially useful if you want to:
 
 - Asset query and lifecycle workflows
 - UMG inspection and editing workflows
-- Blueprint authoring and graph workflows, including comment box nodes
+- Blueprint authoring and graph workflows, including comment box and reroute (`K2Node_Knot`) nodes
 - Animation Blueprint and animation workflows
 - Niagara and material workflows, including reroute and named reroute graph coverage
 - Settings and object inspection workflows

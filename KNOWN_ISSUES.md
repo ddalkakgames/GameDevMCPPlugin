@@ -62,6 +62,12 @@ Live Coding support exists, but completion timing can still depend on editor sta
 
 Treat Live Coding as a practical workflow surface, not a guaranteed instant synchronous compile path.
 
+### 9. Same-Project Multi-Editor Routing Still Needs Explicit Instance Selection
+
+Workspace-aware launchers resolve the current Unreal project reliably, but they do not fully disambiguate multiple open editor instances of the exact same project.
+
+If you run more than one Unreal Editor instance for the same `.uproject`, you may still need explicit instance selection for deterministic routing.
+
 ## Reporting Issues
 
 When reporting issues, please include:

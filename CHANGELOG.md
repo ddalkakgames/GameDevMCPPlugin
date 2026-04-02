@@ -2,6 +2,31 @@
 
 All notable changes for this repository will be documented in this file.
 
+## v0.8.3 - 2026-04-02
+
+Blueprint reroute coverage release.
+
+### Added
+
+- Public docs for Blueprint `K2Node_Knot` / reroute authoring coverage
+- Runtime validation coverage for Blueprint reroute node creation and round-trip inspection
+
+### Improved
+
+- Blueprint graph authoring now supports `reroute`, `knot`, and `/Script/BlueprintGraph.K2Node_Knot` aliases in `blueprint.graph.node.add`
+- Blueprint node inspection now reports canonical `node_type` values for comment box and knot nodes
+
+### Fixed
+
+- Removed the gap between changelog messaging and actual Blueprint reroute support
+- `blueprint.graph.node.add` no longer rejects Blueprint reroute requests as unsupported node types
+
+### Compatibility
+
+- Unreal Engine: `5.7`
+- Platform: `Win64`
+- Distribution: `Binary-only`
+
 ## v0.8.2 - 2026-04-02
 
 Authoring and launcher update release.

@@ -29,7 +29,7 @@ It is intentionally conservative.
 | Object Inspect / Patch | Advanced | Yes | No | Yes | N/A | `object.inspect`, `object.patch`, and `object.patch.v2` provide the shared property editing surface used by several authoring domains. |
 | Project / GameMode Settings | Advanced | Yes | N/A | Yes | Apply | Project settings patch/apply and GameMode get/default/map override/compose workflows are available. |
 | Editor / Live Coding | Partial | Yes | N/A | Compile trigger | Partial | `editor.livecoding.compile` exists with artifact capture and job requery, but self-patch safe mode is asynchronous and Windows/editor-session specific. |
-| Blueprint | Advanced | Yes | Yes | Yes | Yes | Blueprint class, variable, function, graph node/pin, comment box, compose, stabilize, validate, and compile flows are implemented. |
+| Blueprint | Advanced | Yes | Yes | Yes | Yes | Blueprint class, variable, function, graph node/pin, comment box, reroute (`K2Node_Knot`), compose, stabilize, validate, and compile flows are implemented. |
 | UMG / Widget Blueprint | Advanced | Yes | Yes | Yes | Yes | Widget Blueprint creation, widget tree edits, slot patching, bindings, events, animations, and UMG workflow helpers are available. |
 | Runtime UI / Slate / Widget Reflector | Read-only | Yes | No | No | N/A | Live editor UI snapshots, hit tests, focus inspection, and snapshot diffing are supported for runtime introspection. |
 | Material | Advanced | Yes | Yes | Yes | Yes | Material graph expression add/connect/configure, reroute and named reroute flows, property wiring, layout, and recompile flows are supported. |
@@ -106,6 +106,7 @@ Current limitation:
 - Add variables and functions
 - Add, remove, move, configure, and reconstruct graph nodes
 - Create and configure Blueprint comment boxes
+- Add Blueprint reroute / knot nodes
 - Connect pins, disconnect pins, autowire exec paths, and set pin defaults
 - Use compose/layout/stabilize/validate-and-compile workflows
 
