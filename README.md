@@ -47,6 +47,12 @@ For a comprehensive domain-by-domain support summary, including Live Coding, ani
 
 ## 🚀 Quick Start
 
+### Watch the install video
+
+[![Watch the install video](https://img.youtube.com/vi/EGtM-gCSE2w/hqdefault.jpg)](https://www.youtube.com/watch?v=EGtM-gCSE2w)
+
+Prefer a video walkthrough first? Watch the install guide on YouTube before following the steps below.
+
 ### 1. Install the plugin
 
 1. Download the latest release ZIP from the [Releases](https://github.com/ddalkakgames/GameDevMCPPlugin/releases/latest) page.
