@@ -23,6 +23,7 @@ This build is intended for evaluation and workflow validation.
 - stability is still being validated
 - edge-case failures may still exist
 - some workflows may need additional usability improvements
+- `v0.8.4` expands representative validation coverage, but that broader coverage should still be treated as preview-level confidence rather than production hardening
 
 ### 3. Incomplete Workflow Coverage
 

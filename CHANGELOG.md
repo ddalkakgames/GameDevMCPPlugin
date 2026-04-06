@@ -2,6 +2,31 @@
 
 All notable changes for this repository will be documented in this file.
 
+## v0.8.4 - 2026-04-06
+
+Stability and validation coverage release.
+
+### Added
+
+- Broader runtime validation coverage for UMG, animation asset, landscape/foliage, and widget reflector workflows
+- Representative smoke and contract coverage across Blueprint, Animation Blueprint, Material, and Niagara refactor paths
+
+### Improved
+
+- Public preview validation depth for Blueprint, UMG, animation asset, material, Niagara, and world authoring workflows on UE `5.7` / `Win64`
+- Internal editor handler and automation layout for safer follow-up preview releases
+
+### Fixed
+
+- Anim Montage section cleanup now clears stale next-section links when a referenced section is removed
+- Runtime-added UMG widgets now preserve variable exposure more reliably during follow-up editing flows
+
+### Compatibility
+
+- Unreal Engine: `5.7`
+- Platform: `Win64`
+- Distribution: `Binary-only`
+
 ## v0.8.3 - 2026-04-02
 
 Blueprint reroute coverage release.

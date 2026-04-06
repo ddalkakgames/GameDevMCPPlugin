@@ -39,6 +39,7 @@ This project is especially useful if you want to:
 - Blueprint authoring and graph workflows, including comment box and reroute (`K2Node_Knot`) nodes
 - Animation Blueprint and animation workflows
 - Niagara and material workflows, including reroute and named reroute graph coverage
+- Representative validation now covers Blueprint, UMG, animation asset, material, Niagara, and world workflows on UE `5.7` / `Win64`
 - Settings and object inspection workflows
 - Landscape, foliage, and world authoring workflows
 - Embedded MCP server and Unreal Editor bridge tooling

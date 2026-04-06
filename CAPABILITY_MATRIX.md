@@ -18,6 +18,7 @@ It is intentionally conservative.
 - This matrix focuses on **editor-side MCP surfaces** exposed to AI agents through the bundled MCP server.
 - Many higher-level workflows combine shared tools such as `asset.*`, `object.*`, `settings.*`, `job.*`, and `changeset.*`.
 - Current public validation is strongest on **UE 5.7 / Win64 / local editor workflows**.
+- Representative preview validation now includes Blueprint, UMG, animation asset, material, Niagara, and world authoring smoke/contract paths.
 
 ## Domain Matrix
 
